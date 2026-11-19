@@ -3,6 +3,7 @@ package com.lms.cms.controller;
 import com.lms.cms.dto.CourseRequestDto;
 import com.lms.cms.entity.Course;
 import com.lms.cms.service.CourseService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class CourseController {
     }
 
     @PostMapping
-    public Course createCourse(@RequestBody CourseRequestDto course) {
+    public Course createCourse(@Valid @RequestBody CourseRequestDto course) {
       return   courseService.createCourse(course);
 
     }
